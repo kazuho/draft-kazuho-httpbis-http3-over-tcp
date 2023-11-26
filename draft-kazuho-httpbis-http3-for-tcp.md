@@ -45,8 +45,8 @@ layer have to be designed and implemented for both HTTP/2 and HTTP/3. Both the
 protocol stacks have to be maintained, fixing bugs, performance issues, and
 vulnerabilities as necessary.
 
-This document resolves the problem by specifying a way to run HTTP/3 on top of
-TCP, by using Quic Services for Streams
+This specification resolves the problem by defining a way to run HTTP/3 on top
+of TCP, by using Quic Services for Streams
 ({{!I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC Services
 for Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
 using QUIC Services for Streams, it is possible to run HTTP/3 on top of TCP
