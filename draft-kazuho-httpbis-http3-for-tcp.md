@@ -11,6 +11,8 @@ author:
     fullname: Kazuho Oku
     organization: Fastly
     email: kazuhooku@gmail.com
+normative:
+  RFC9110:
 
 --- abstract
 
@@ -45,7 +47,7 @@ vulnerabilities as necessary.
 
 This document resolves the problem by specifying a way to run HTTP/3 on top of
 TCP, by using Quic Services for Streams
-{{!QSS=I-D.kazuho-quic-quic-services-for-streams}} as the basis. QUIC Services
+({{!I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC Services
 for Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
 using QUIC Services for Streams, it is possible to run HTTP/3 on top of TCP
 without modification.
@@ -57,6 +59,30 @@ HTTP/3.
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
+
+
+# Starting HTTP/3 for TCP
+
+HTTP/3 for TCP can be used for “http” and “https” URI schemes defined in
+{{Section 4.2 of RFC9110}} with the same default port numbers as HTTP/1.1
+({{!RFC9112}}).
+
+When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
+({{!RFC8446}}) with the ALPN ({{!RFC7301}}) extension: “h3t”.
+
+Also, clients may learn that a particular server supports HTTP/3 for TCP by
+other means. A client that knows that a server supports HTTP/3 over TCP can
+establish a TCP connection and start exchanging HTTP/3 frames using QUIC
+Services for Streams.
+
+The latter is the only way to discover HTTP/3 over TCP for “http” URIs.
+
+
+# Exchanging HTTP/3 Frames
+
+Once the TCP connection is setup and the Transport Parameters are exchanged by
+QUIC Services for Streams, endpoints can exchange the HTTP/3 frames as if the
+underlying connection was QUIC.
 
 
 # Security Considerations
