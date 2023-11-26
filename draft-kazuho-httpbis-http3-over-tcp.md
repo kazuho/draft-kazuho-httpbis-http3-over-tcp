@@ -2,6 +2,7 @@
 title: "HTTP/3 over TCP"
 docname: draft-kazuho-httpbis-http3-over-tcp-latest
 category: std
+wg: httpbis
 ipr: trust200902
 keyword: internet-draft
 stand_alone: yes
