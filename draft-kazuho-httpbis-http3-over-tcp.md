@@ -1,6 +1,6 @@
 ---
-title: "HTTP/3 for TCP"
-docname: draft-kazuho-httpbis-http3-for-tcp-latest
+title: "HTTP/3 over TCP"
+docname: draft-kazuho-httpbis-http3-over-tcp-latest
 category: std
 ipr: trust200902
 keyword: internet-draft
@@ -61,16 +61,16 @@ HTTP/3.
 {::boilerplate bcp14-tagged}
 
 
-# Starting HTTP/3 for TCP
+# Starting HTTP/3 over TCP
 
-HTTP/3 for TCP can be used for “http” and “https” URI schemes defined in
+HTTP/3 over TCP can be used for “http” and “https” URI schemes defined in
 {{Section 4.2 of RFC9110}} with the same default port numbers as HTTP/1.1
 ({{!RFC9112}}).
 
 When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
 ({{!RFC8446}}) with the ALPN ({{!RFC7301}}) extension: “h3t”.
 
-Also, clients may learn that a particular server supports HTTP/3 for TCP by
+Also, clients may learn that a particular server supports HTTP/3 over TCP by
 other means. A client that knows that a server supports HTTP/3 over TCP can
 establish a TCP connection and start exchanging HTTP/3 frames using QUIC
 Services for Streams.

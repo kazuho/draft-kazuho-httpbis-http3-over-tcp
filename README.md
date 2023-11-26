@@ -2,10 +2,10 @@
 
 This is the working area for the individual Internet-Draft, "HTTP/3 for TCP".
 
-* [Editor's Copy](https://kazuho.github.io/draft-kazuho-httpbis-http3-over-tcp/#go.draft-kazuho-httpbis-http3-for-tcp.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-kazuho-httpbis-http3-for-tcp)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-kazuho-httpbis-http3-for-tcp)
-* [Compare Editor's Copy to Individual Draft](https://kazuho.github.io/draft-kazuho-httpbis-http3-over-tcp/#go.draft-kazuho-httpbis-http3-for-tcp.diff)
+* [Editor's Copy](https://kazuho.github.io/draft-kazuho-httpbis-http3-over-tcp/#go.draft-kazuho-httpbis-http3-over-tcp.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-kazuho-httpbis-http3-over-tcp)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-kazuho-httpbis-http3-over-tcp)
+* [Compare Editor's Copy to Individual Draft](https://kazuho.github.io/draft-kazuho-httpbis-http3-over-tcp/#go.draft-kazuho-httpbis-http3-over-tcp.diff)
 
 
 ## Contributing
