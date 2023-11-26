@@ -1,6 +1,6 @@
-# HTTP/3 for TCP
+# HTTP/3 over TCP
 
-This is the working area for the individual Internet-Draft, "HTTP/3 for TCP".
+This is the working area for the individual Internet-Draft, "HTTP/3 over TCP".
 
 * [Editor's Copy](https://kazuho.github.io/draft-kazuho-httpbis-http3-over-tcp/#go.draft-kazuho-httpbis-http3-over-tcp.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-kazuho-httpbis-http3-over-tcp)
