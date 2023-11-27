@@ -90,6 +90,12 @@ QUIC Services for Streams, endpoints can exchange the HTTP/3 frames as if the
 underlying connection was QUIC.
 
 
+# Support for Extended CONNECT
+
+Servers speaking HTTP/3 over TCP MUST implement the Extended CONNECT scheme
+defined in {{!RFC9220}}.
+
+
 # Security Considerations
 
 TODO Security
