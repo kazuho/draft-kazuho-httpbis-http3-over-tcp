@@ -48,7 +48,7 @@ vulnerabilities as necessary.
 
 This specification resolves the problem by defining a way to run HTTP/3 on top
 of TCP, by using Quic Services for Streams
-({{!I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC Services
+({{!QSS=I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC Services
 for Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
 using QUIC Services for Streams, it is possible to run HTTP/3 on top of TCP
 without modification.
@@ -77,6 +77,10 @@ establish a TCP connection and start exchanging HTTP/3 frames using QUIC
 Services for Streams.
 
 The latter is the only way to discover HTTP/3 over TCP for “http” URIs.
+
+When used in cleartext, servers can determine if or not the client is speaking
+HTTP/3 over TCP by comparing the first eight bytes to the encoded form of the
+QSS_TRANSPORT_PARAMETERS frame type (Section 4.2 of {{QSS}}).
 
 
 # Exchanging HTTP/3 Frames
