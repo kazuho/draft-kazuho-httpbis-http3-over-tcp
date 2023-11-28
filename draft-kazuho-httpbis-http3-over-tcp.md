@@ -13,7 +13,7 @@ author:
     organization: Fastly
     email: kazuhooku@gmail.com
 normative:
-  RFC9110:
+  HTTP-SEMANTICS: RFC9110
 
 --- abstract
 
@@ -25,13 +25,13 @@ byte-oriented streams such as TLS over TCP.
 
 # Introduction
 
-In the year of 2023, HTTP/2 ({{?RFC9113}}) is the most widely used version of
-HTTP across the Internet, while the adoption rate of HTTP/3 ({{!RFC9114}}) is
-increasing rapidly.
+In the year of 2023, HTTP/2 {{?HTTP2=RFC9113}} is the most widely used version
+of HTTP across the Internet, while the adoption rate of HTTP/3
+{{!HTTP3=RFC9114}} is increasing rapidly.
 
-HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC ({{?RFC9000}})
-as the transport layer protocol that provides features such as stream
-multiplexing without head-of-line blocking, low-latency connection
+HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC
+{{?QUIC=RFC9000}} as the transport layer protocol that provides features such as
+stream multiplexing without head-of-line blocking, low-latency connection
 establishment.
 
 But because QUIC is not as universally available or accessible as TCP, it is
@@ -66,11 +66,11 @@ HTTP/3.
 # Starting HTTP/3 on Streams
 
 HTTP/3 on Streams can be used for “http” and “https” URI schemes defined in
-{{Section 4.2 of RFC9110}} with the same default port numbers as HTTP/1.1
-({{!RFC9112}}).
+{{Section 4.2 of HTTP-SEMANTICS}} with the same default port numbers as HTTP/1.1
+{{!HTTP1=RFC9112}}.
 
 When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
-({{!RFC8446}}) with the ALPN ({{!RFC7301}}) extension: “h3t”.
+{{!TLS13=RFC8446}} with the ALPN {{!ALPN=RFC7301}} extension: “h3t”.
 
 Also, clients may learn that a particular server supports HTTP/3 on Streams by
 other means. A client that knows that a server supports HTTP/3 on Streams can
@@ -94,7 +94,7 @@ connection was QUIC.
 # Support for Extended CONNECT
 
 Servers speaking HTTP/3 on Streams MUST implement the Extended CONNECT scheme
-defined in {{!RFC9220}}.
+defined in {{!EXT-CONNECT3=RFC9220}}.
 
 
 # Security Considerations
