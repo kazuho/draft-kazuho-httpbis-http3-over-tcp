@@ -1170,12 +1170,12 @@ byte-oriented streams such as TLS over TCP.<a href="#section-abstract-1" class="
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">In the year of 2023, HTTP/2 (<span>[<a href="#RFC9113" class="cite xref">RFC9113</a>]</span>) is the most widely used version of
-HTTP across the Internet, while the adoption rate of HTTP/3 (<span>[<a href="#RFC9114" class="cite xref">RFC9114</a>]</span>) is
-increasing rapidly.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC (<span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span>)
-as the transport layer protocol that provides features such as stream
-multiplexing without head-of-line blocking, low-latency connection
+<p id="section-1-1">In the year of 2023, HTTP/2 <span>[<a href="#HTTP2" class="cite xref">HTTP2</a>]</span> is the most widely used version
+of HTTP across the Internet, while the adoption rate of HTTP/3
+<span>[<a href="#HTTP3" class="cite xref">HTTP3</a>]</span> is increasing rapidly.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC
+<span>[<a href="#QUIC" class="cite xref">QUIC</a>]</span> as the transport layer protocol that provides features such as
+stream multiplexing without head-of-line blocking, low-latency connection
 establishment.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">But because QUIC is not as universally available or accessible as TCP, it is
 unlikely that we will see all HTTP/2 traffic migrate to the QUIC-based HTTP/3.<a href="#section-1-3" class="pilcrow">¶</a></p>
@@ -1214,10 +1214,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-starting-http-3-on-streams" class="section-name selfRef">Starting HTTP/3 on Streams</a>
       </h2>
 <p id="section-3-1">HTTP/3 on Streams can be used for “http” and “https” URI schemes defined in
-<span><a href="https://rfc-editor.org/rfc/rfc9110#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span> with the same default port numbers as HTTP/1.1
-(<span>[<a href="#RFC9112" class="cite xref">RFC9112</a>]</span>).<a href="#section-3-1" class="pilcrow">¶</a></p>
+<span><a href="https://rfc-editor.org/rfc/rfc9110#section-4.2" class="relref">Section 4.2</a> of [<a href="#HTTP-SEMANTICS" class="cite xref">HTTP-SEMANTICS</a>]</span> with the same default port numbers as HTTP/1.1
+<span>[<a href="#HTTP1" class="cite xref">HTTP1</a>]</span>.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
-(<span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>) with the ALPN (<span>[<a href="#RFC7301" class="cite xref">RFC7301</a>]</span>) extension: “h3t”.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<span>[<a href="#TLS13" class="cite xref">TLS13</a>]</span> with the ALPN <span>[<a href="#ALPN" class="cite xref">ALPN</a>]</span> extension: “h3t”.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">Also, clients may learn that a particular server supports HTTP/3 on Streams by
 other means. A client that knows that a server supports HTTP/3 on Streams can
 establish a TCP connection and start exchanging HTTP/3 frames using QUIC on
@@ -1244,7 +1244,7 @@ connection was QUIC.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-support-for-extended-connec" class="section-name selfRef">Support for Extended CONNECT</a>
       </h2>
 <p id="section-5-1">Servers speaking HTTP/3 on Streams <span class="bcp14">MUST</span> implement the Extended CONNECT scheme
-defined in <span>[<a href="#RFC9220" class="cite xref">RFC9220</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+defined in <span>[<a href="#EXT-CONNECT3" class="cite xref">EXT-CONNECT3</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
@@ -1273,6 +1273,26 @@ defined in <span>[<a href="#RFC9220" class="cite xref">RFC9220</a>]</span>.<a hr
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
+<dt id="ALPN">[ALPN]</dt>
+        <dd>
+<span class="refAuthor">Friedl, S.</span>, <span class="refAuthor">Popov, A.</span>, <span class="refAuthor">Langley, A.</span>, and <span class="refAuthor">E. Stephan</span>, <span class="refTitle">"Transport Layer Security (TLS) Application-Layer Protocol Negotiation Extension"</span>, <span class="seriesInfo">RFC 7301</span>, <span class="seriesInfo">DOI 10.17487/RFC7301</span>, <time datetime="2014-07" class="refDate">July 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7301">https://www.rfc-editor.org/rfc/rfc7301</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="EXT-CONNECT3">[EXT-CONNECT3]</dt>
+        <dd>
+<span class="refAuthor">Hamilton, R.</span>, <span class="refTitle">"Bootstrapping WebSockets with HTTP/3"</span>, <span class="seriesInfo">RFC 9220</span>, <span class="seriesInfo">DOI 10.17487/RFC9220</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9220">https://www.rfc-editor.org/rfc/rfc9220</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP-SEMANTICS">[HTTP-SEMANTICS]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP1">[HTTP1]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP/1.1"</span>, <span class="seriesInfo">STD 99</span>, <span class="seriesInfo">RFC 9112</span>, <span class="seriesInfo">DOI 10.17487/RFC9112</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9112">https://www.rfc-editor.org/rfc/rfc9112</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="HTTP3">[HTTP3]</dt>
+        <dd>
+<span class="refAuthor">Bishop, M., Ed.</span>, <span class="refTitle">"HTTP/3"</span>, <span class="seriesInfo">RFC 9114</span>, <span class="seriesInfo">DOI 10.17487/RFC9114</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9114">https://www.rfc-editor.org/rfc/rfc9114</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="QS">[QS]</dt>
         <dd>
 <span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
@@ -1281,33 +1301,13 @@ defined in <span>[<a href="#RFC9220" class="cite xref">RFC9220</a>]</span>.<a hr
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC7301">[RFC7301]</dt>
-        <dd>
-<span class="refAuthor">Friedl, S.</span>, <span class="refAuthor">Popov, A.</span>, <span class="refAuthor">Langley, A.</span>, and <span class="refAuthor">E. Stephan</span>, <span class="refTitle">"Transport Layer Security (TLS) Application-Layer Protocol Negotiation Extension"</span>, <span class="seriesInfo">RFC 7301</span>, <span class="seriesInfo">DOI 10.17487/RFC7301</span>, <time datetime="2014-07" class="refDate">July 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7301">https://www.rfc-editor.org/rfc/rfc7301</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
         <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC8446">[RFC8446]</dt>
-        <dd>
-<span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9110">[RFC9110]</dt>
-        <dd>
-<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9112">[RFC9112]</dt>
-        <dd>
-<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP/1.1"</span>, <span class="seriesInfo">STD 99</span>, <span class="seriesInfo">RFC 9112</span>, <span class="seriesInfo">DOI 10.17487/RFC9112</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9112">https://www.rfc-editor.org/rfc/rfc9112</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9114">[RFC9114]</dt>
-        <dd>
-<span class="refAuthor">Bishop, M., Ed.</span>, <span class="refTitle">"HTTP/3"</span>, <span class="seriesInfo">RFC 9114</span>, <span class="seriesInfo">DOI 10.17487/RFC9114</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9114">https://www.rfc-editor.org/rfc/rfc9114</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9220">[RFC9220]</dt>
+<dt id="TLS13">[TLS13]</dt>
       <dd>
-<span class="refAuthor">Hamilton, R.</span>, <span class="refTitle">"Bootstrapping WebSockets with HTTP/3"</span>, <span class="seriesInfo">RFC 9220</span>, <span class="seriesInfo">DOI 10.17487/RFC9220</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9220">https://www.rfc-editor.org/rfc/rfc9220</a>&gt;</span>. </dd>
+<span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1318,13 +1318,13 @@ defined in <span>[<a href="#RFC9220" class="cite xref">RFC9220</a>]</span>.<a hr
 <a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC9000">[RFC9000]</dt>
+<dt id="HTTP2">[HTTP2]</dt>
         <dd>
-<span class="refAuthor">Iyengar, J., Ed.</span> and <span class="refAuthor">M. Thomson, Ed.</span>, <span class="refTitle">"QUIC: A UDP-Based Multiplexed and Secure Transport"</span>, <span class="seriesInfo">RFC 9000</span>, <span class="seriesInfo">DOI 10.17487/RFC9000</span>, <time datetime="2021-05" class="refDate">May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9000">https://www.rfc-editor.org/rfc/rfc9000</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9113">[RFC9113]</dt>
-      <dd>
 <span class="refAuthor">Thomson, M., Ed.</span> and <span class="refAuthor">C. Benfield, Ed.</span>, <span class="refTitle">"HTTP/2"</span>, <span class="seriesInfo">RFC 9113</span>, <span class="seriesInfo">DOI 10.17487/RFC9113</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9113">https://www.rfc-editor.org/rfc/rfc9113</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="QUIC">[QUIC]</dt>
+      <dd>
+<span class="refAuthor">Iyengar, J., Ed.</span> and <span class="refAuthor">M. Thomson, Ed.</span>, <span class="refTitle">"QUIC: A UDP-Based Multiplexed and Secure Transport"</span>, <span class="seriesInfo">RFC 9000</span>, <span class="seriesInfo">DOI 10.17487/RFC9000</span>, <time datetime="2021-05" class="refDate">May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9000">https://www.rfc-editor.org/rfc/rfc9000</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>

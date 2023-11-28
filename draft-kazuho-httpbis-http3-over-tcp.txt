@@ -75,14 +75,14 @@ Table of Contents
 
 1.  Introduction
 
-   In the year of 2023, HTTP/2 ([RFC9113]) is the most widely used
-   version of HTTP across the Internet, while the adoption rate of
-   HTTP/3 ([RFC9114]) is increasing rapidly.
+   In the year of 2023, HTTP/2 [HTTP2] is the most widely used version
+   of HTTP across the Internet, while the adoption rate of HTTP/3
+   [HTTP3] is increasing rapidly.
 
    HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC
-   ([RFC9000]) as the transport layer protocol that provides features
-   such as stream multiplexing without head-of-line blocking, low-
-   latency connection establishment.
+   [QUIC] as the transport layer protocol that provides features such as
+   stream multiplexing without head-of-line blocking, low-latency
+   connection establishment.
 
    But because QUIC is not as universally available or accessible as
    TCP, it is unlikely that we will see all HTTP/2 traffic migrate to
@@ -120,11 +120,11 @@ Table of Contents
 3.  Starting HTTP/3 on Streams
 
    HTTP/3 on Streams can be used for “http” and “https” URI schemes
-   defined in Section 4.2 of [RFC9110] with the same default port
-   numbers as HTTP/1.1 ([RFC9112]).
+   defined in Section 4.2 of [HTTP-SEMANTICS] with the same default port
+   numbers as HTTP/1.1 [HTTP1].
 
    When starting HTTP/3 for “https” URIs on top of TCP, clients use the
-   TLS ([RFC8446]) with the ALPN ([RFC7301]) extension: “h3t”.
+   TLS [TLS13] with the ALPN [ALPN] extension: “h3t”.
 
    Also, clients may learn that a particular server supports HTTP/3 on
    Streams by other means.  A client that knows that a server supports
@@ -148,7 +148,7 @@ Table of Contents
 5.  Support for Extended CONNECT
 
    Servers speaking HTTP/3 on Streams MUST implement the Extended
-   CONNECT scheme defined in [RFC9220].
+   CONNECT scheme defined in [EXT-CONNECT3].
 
 6.  Security Considerations
 
@@ -162,6 +162,29 @@ Table of Contents
 
 8.1.  Normative References
 
+   [ALPN]     Friedl, S., Popov, A., Langley, A., and E. Stephan,
+              "Transport Layer Security (TLS) Application-Layer Protocol
+              Negotiation Extension", RFC 7301, DOI 10.17487/RFC7301,
+              July 2014, <https://www.rfc-editor.org/rfc/rfc7301>.
+
+   [EXT-CONNECT3]
+              Hamilton, R., "Bootstrapping WebSockets with HTTP/3",
+              RFC 9220, DOI 10.17487/RFC9220, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9220>.
+
+   [HTTP-SEMANTICS]
+              Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9110>.
+
+   [HTTP1]    Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
+              June 2022, <https://www.rfc-editor.org/rfc/rfc9112>.
+
+   [HTTP3]    Bishop, M., Ed., "HTTP/3", RFC 9114, DOI 10.17487/RFC9114,
+              June 2022, <https://www.rfc-editor.org/rfc/rfc9114>.
+
    [QS]       "*** BROKEN REFERENCE ***".
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
@@ -169,45 +192,24 @@ Table of Contents
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
 
-   [RFC7301]  Friedl, S., Popov, A., Langley, A., and E. Stephan,
-              "Transport Layer Security (TLS) Application-Layer Protocol
-              Negotiation Extension", RFC 7301, DOI 10.17487/RFC7301,
-              July 2014, <https://www.rfc-editor.org/rfc/rfc7301>.
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
+   [TLS13]    Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/rfc/rfc8446>.
 
-   [RFC9110]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP Semantics", STD 97, RFC 9110,
-              DOI 10.17487/RFC9110, June 2022,
-              <https://www.rfc-editor.org/rfc/rfc9110>.
-
-   [RFC9112]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
-              Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
-              June 2022, <https://www.rfc-editor.org/rfc/rfc9112>.
-
-   [RFC9114]  Bishop, M., Ed., "HTTP/3", RFC 9114, DOI 10.17487/RFC9114,
-              June 2022, <https://www.rfc-editor.org/rfc/rfc9114>.
-
-   [RFC9220]  Hamilton, R., "Bootstrapping WebSockets with HTTP/3",
-              RFC 9220, DOI 10.17487/RFC9220, June 2022,
-              <https://www.rfc-editor.org/rfc/rfc9220>.
-
 8.2.  Informative References
 
-   [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
+   [HTTP2]    Thomson, M., Ed. and C. Benfield, Ed., "HTTP/2", RFC 9113,
+              DOI 10.17487/RFC9113, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9113>.
+
+   [QUIC]     Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
               DOI 10.17487/RFC9000, May 2021,
               <https://www.rfc-editor.org/rfc/rfc9000>.
-
-   [RFC9113]  Thomson, M., Ed. and C. Benfield, Ed., "HTTP/2", RFC 9113,
-              DOI 10.17487/RFC9113, June 2022,
-              <https://www.rfc-editor.org/rfc/rfc9113>.
 
 Acknowledgments
 
