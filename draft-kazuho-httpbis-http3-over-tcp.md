@@ -1,5 +1,5 @@
 ---
-title: "HTTP/3 over TCP"
+title: "HTTP/3 on Streams"
 docname: draft-kazuho-httpbis-http3-over-tcp-latest
 category: std
 wg: httpbis
@@ -17,7 +17,8 @@ normative:
 
 --- abstract
 
-This document specifies how to use HTTP/3 on top of TCP.
+This document specifies how to use HTTP/3 on top of bi-directional,
+byte-oriented streams such as TLS over TCP.
 
 
 --- middle
@@ -47,11 +48,11 @@ protocol stacks have to be maintained, fixing bugs, performance issues, and
 vulnerabilities as necessary.
 
 This specification resolves the problem by defining a way to run HTTP/3 on top
-of TCP, by using Quic Services for Streams
-({{!QSS=I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC Services
-for Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
-using QUIC Services for Streams, it is possible to run HTTP/3 on top of TCP
-without modification.
+of TCP, by using Quic on Streams
+({{!QS=I-D.kazuho-quic-quic-services-for-streams}}) as the basis. QUIC on
+Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
+using QUIC on Streams, it is possible to run HTTP/3 on top of TCP without
+modification.
 
 Design, implementation, and maintenance can focus on just one HTTP version:
 HTTP/3.
@@ -62,37 +63,37 @@ HTTP/3.
 {::boilerplate bcp14-tagged}
 
 
-# Starting HTTP/3 over TCP
+# Starting HTTP/3 on Streams
 
-HTTP/3 over TCP can be used for “http” and “https” URI schemes defined in
+HTTP/3 on Streams can be used for “http” and “https” URI schemes defined in
 {{Section 4.2 of RFC9110}} with the same default port numbers as HTTP/1.1
 ({{!RFC9112}}).
 
 When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
 ({{!RFC8446}}) with the ALPN ({{!RFC7301}}) extension: “h3t”.
 
-Also, clients may learn that a particular server supports HTTP/3 over TCP by
-other means. A client that knows that a server supports HTTP/3 over TCP can
-establish a TCP connection and start exchanging HTTP/3 frames using QUIC
-Services for Streams.
+Also, clients may learn that a particular server supports HTTP/3 on Streams by
+other means. A client that knows that a server supports HTTP/3 on Streams can
+establish a TCP connection and start exchanging HTTP/3 frames using QUIC on
+Streams.
 
-The latter is the only way to discover HTTP/3 over TCP for “http” URIs.
+The latter is the only way to discover HTTP/3 on Streams for “http” URIs.
 
 When used in cleartext, servers can determine if or not the client is speaking
-HTTP/3 over TCP by comparing the first eight bytes to the encoded form of the
-QSS_TRANSPORT_PARAMETERS frame type (Section 4.2 of {{QSS}}).
+HTTP/3 on Streams by comparing the first eight bytes to the encoded form of the
+QS_TRANSPORT_PARAMETERS frame type (Section 4.2 of {{QS}}).
 
 
 # Exchanging HTTP/3 Frames
 
 Once the TCP connection is setup and the Transport Parameters are exchanged by
-QUIC Services for Streams, endpoints can exchange the HTTP/3 frames as if the
-underlying connection was QUIC.
+QUIC on Streams, endpoints can exchange the HTTP/3 frames as if the underlying
+connection was QUIC.
 
 
 # Support for Extended CONNECT
 
-Servers speaking HTTP/3 over TCP MUST implement the Extended CONNECT scheme
+Servers speaking HTTP/3 on Streams MUST implement the Extended CONNECT scheme
 defined in {{!RFC9220}}.
 
 
