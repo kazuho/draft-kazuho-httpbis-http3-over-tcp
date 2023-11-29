@@ -124,7 +124,7 @@ Table of Contents
    numbers as HTTP/1.1 [HTTP1].
 
    When starting HTTP/3 for “https” URIs on top of TCP, clients use the
-   TLS [TLS13] with the ALPN [ALPN] extension: “h3t”.
+   TLS [TLS13] with the ALPN [ALPN] extension: “h3s”.
 
    Also, clients may learn that a particular server supports HTTP/3 on
    Streams by other means.  A client that knows that a server supports
