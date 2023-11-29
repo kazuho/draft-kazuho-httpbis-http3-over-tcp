@@ -123,8 +123,8 @@ Table of Contents
    defined in Section 4.2 of [HTTP-SEMANTICS] with the same default port
    numbers as HTTP/1.1 [HTTP1].
 
-   When starting HTTP/3 for “https” URIs on top of TCP, clients use the
-   TLS [TLS13] with the ALPN [ALPN] extension: “h3s”.
+   When starting HTTP/3 on Streams for “https” URIs, clients use the TLS
+   [TLS13] with the ALPN [ALPN] extension: “h3s”.
 
    Also, clients may learn that a particular server supports HTTP/3 on
    Streams by other means.  A client that knows that a server supports
