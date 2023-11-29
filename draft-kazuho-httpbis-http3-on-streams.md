@@ -92,13 +92,6 @@ HTTP/3 on Streams by comparing the first eight bytes to the encoded form of the
 QS_TRANSPORT_PARAMETERS frame type (Section 4.2 of {{QUIC-ON-STREAMS}}).
 
 
-# Exchanging HTTP/3 Frames
-
-Once the TCP connection is setup and the Transport Parameters are exchanged by
-QUIC on Streams, endpoints can exchange the HTTP/3 frames as if the underlying
-connection was QUIC.
-
-
 # Support for Extended CONNECT
 
 Servers speaking HTTP/3 on Streams MUST implement the Extended CONNECT scheme
