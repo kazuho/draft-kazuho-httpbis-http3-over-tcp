@@ -25,37 +25,37 @@ byte-oriented streams such as TLS over TCP.
 
 # Introduction
 
-In the year of 2023, HTTP/2 {{?HTTP2=RFC9113}} is the most widely used version
-of HTTP across the Internet, while the adoption rate of HTTP/3
+As of 2023, HTTP/2 {{?HTTP2=RFC9113}} remains the most widely used version of
+HTTP across the Internet, although the adoption rate of HTTP/3
 {{!HTTP3=RFC9114}} is increasing rapidly.
 
-HTTP/3 has several benefits over HTTP/2 thanks to the use of QUIC
-{{?QUIC=RFC9000}} as the transport layer protocol that provides features such as
-stream multiplexing without head-of-line blocking, low-latency connection
+HTTP/3 has several advantages over HTTP/2, primarily due to its use of QUIC
+{{?QUIC=RFC9000}} as the transport layer protocol, which provides features like
+stream multiplexing without head-of-line blocking and low-latency connection
 establishment.
 
-But because QUIC is not as universally available or accessible as TCP, it is
-unlikely that we will see all HTTP/2 traffic migrate to the QUIC-based HTTP/3.
+However, given that QUIC's availability and accessibility are not as universal
+as TCP's, a complete migration of all HTTP/2 traffic to QUIC-based HTTP/3 seems
+unlikely.
 
-The fact means that HTTP deployments have to support two transport protocols and
-the HTTP versions running on each of them for the foreseeable future.
+This situation necessitates HTTP deployments to support both transport protocols
+and their respective HTTP versions for the foreseeable future.
 
-This is a costly situation, as the two HTTP protocols are different in many
-aspects, such as wire-encoding, flow control and stream multiplexing machinery,
-and HTTP header compression. Extensions that work at the HTTP wire encoding
-layer have to be designed and implemented for both HTTP/2 and HTTP/3. Both the
-protocol stacks have to be maintained, fixing bugs, performance issues, and
-vulnerabilities as necessary.
+Maintaining dual support is costly, as the two protocols differ in many aspects
+such as wire-encoding, flow control and stream multiplexing machinery, and HTTP
+header compression. Extensions operating at the HTTP wire encoding layer must
+be developed and implemented for both HTTP/2 and HTTP/3, and both protocol
+stacks require ongoing maintenance to address bugs, performance issues, and
+vulnerabilities.
 
-This specification resolves the problem by defining a way to run HTTP/3 on top
-of TCP, by using Quic on Streams
+To address this redundancy, this specification defines the method of running
+HTTP/3 over TCP, utilizing QUIC on Streams
 {{!QUIC-ON-STREAMS=I-D.kazuho-quic-quic-on-streams}} as the basis. QUIC on
-Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
-using QUIC on Streams, it is possible to run HTTP/3 on top of TCP without
-modification.
+Streams, acting as a polyfill of QUIC atop bi-directional byte streams, enables
+the operation of HTTP/3 over TCP without any modifications.
 
-Design, implementation, and maintenance can focus on just one HTTP version:
-HTTP/3.
+Consequently, design, implementation, and maintenance efforts can concentrate on
+a single HTTP version: HTTP/3.
 
 
 # Conventions and Definitions
