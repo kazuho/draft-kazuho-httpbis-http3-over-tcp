@@ -49,7 +49,7 @@ vulnerabilities as necessary.
 
 This specification resolves the problem by defining a way to run HTTP/3 on top
 of TCP, by using Quic on Streams
-({{!QUIC-ON-STREAMS=I-D.kazuho-quic-quic-on-streams}}) as the basis. QUIC on
+{{!QUIC-ON-STREAMS=I-D.kazuho-quic-quic-on-streams}} as the basis. QUIC on
 Streams is a polyfill of QUIC that runs on top of bi-directional streams. By
 using QUIC on Streams, it is possible to run HTTP/3 on top of TCP without
 modification.
