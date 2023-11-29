@@ -63,6 +63,14 @@ a single HTTP version: HTTP/3.
 {::boilerplate bcp14-tagged}
 
 
+# The Protocol
+
+HTTP/3 functions over QUIC version 1, employing the set of operations (i.e.,
+API) defined in {{Section 2.4 and Section 5.3 of QUIC}}. Conversely, HTTP/3 on
+Streams utilizes the same set of operations but functions over QUIC on Streams
+instead.
+
+
 # Starting HTTP/3 on Streams
 
 HTTP/3 on Streams can be used for “http” and “https” URI schemes defined in
