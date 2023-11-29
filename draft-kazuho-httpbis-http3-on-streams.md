@@ -69,7 +69,7 @@ HTTP/3 on Streams can be used for “http” and “https” URI schemes defined
 {{Section 4.2 of HTTP-SEMANTICS}} with the same default port numbers as HTTP/1.1
 {{!HTTP1=RFC9112}}.
 
-When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
+When starting HTTP/3 on Streams for “https” URIs, clients use the TLS
 {{!TLS13=RFC8446}} with the ALPN {{!ALPN=RFC7301}} extension: “h3s”.
 
 Also, clients may learn that a particular server supports HTTP/3 on Streams by
