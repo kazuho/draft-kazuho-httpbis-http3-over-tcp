@@ -70,7 +70,7 @@ HTTP/3 on Streams can be used for “http” and “https” URI schemes defined
 {{!HTTP1=RFC9112}}.
 
 When starting HTTP/3 for “https” URIs on top of TCP, clients use the TLS
-{{!TLS13=RFC8446}} with the ALPN {{!ALPN=RFC7301}} extension: “h3t”.
+{{!TLS13=RFC8446}} with the ALPN {{!ALPN=RFC7301}} extension: “h3s”.
 
 Also, clients may learn that a particular server supports HTTP/3 on Streams by
 other means. A client that knows that a server supports HTTP/3 on Streams can
