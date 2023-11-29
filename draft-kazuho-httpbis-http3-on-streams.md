@@ -1,6 +1,6 @@
 ---
 title: "HTTP/3 on Streams"
-docname: draft-kazuho-httpbis-http3-over-tcp-latest
+docname: draft-kazuho-httpbis-http3-on-streams-latest
 category: std
 wg: httpbis
 ipr: trust200902

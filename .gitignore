@@ -17,7 +17,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-kazuho-httpbis-http3-over-tcp.xml
+draft-kazuho-httpbis-http3-on-streams.xml
 package-lock.json
 report.xml
 !requirements.txt
