@@ -4,12 +4,12 @@
 
 httpbis                                                           K. Oku
 Internet-Draft                                                    Fastly
-Intended status: Standards Track                        28 November 2023
-Expires: 31 May 2024
+Intended status: Standards Track                        29 November 2023
+Expires: 1 June 2024
 
 
                            HTTP/3 on Streams
-               draft-kazuho-httpbis-http3-over-tcp-latest
+              draft-kazuho-httpbis-http3-on-streams-latest
 
 Abstract
 
@@ -25,7 +25,7 @@ Discussion Venues
    https://lists.w3.org/Archives/Public/ietf-http-wg/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/kazuho/draft-kazuho-httpbis-http3-over-tcp.
+   https://github.com/kazuho/draft-kazuho-httpbis-http3-on-streams.
 
 Status of This Memo
 
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 May 2024.
+   This Internet-Draft will expire on 1 June 2024.
 
 Copyright Notice
 
