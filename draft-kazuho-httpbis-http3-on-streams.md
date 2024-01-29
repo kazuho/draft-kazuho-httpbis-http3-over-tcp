@@ -12,6 +12,11 @@ author:
     fullname: Kazuho Oku
     organization: Fastly
     email: kazuhooku@gmail.com
+-
+    fullname: Lucas Pardue
+    organization: Cloudflare
+    email: lucas@lucaspardue.com
+
 normative:
   HTTP-SEMANTICS: RFC9110
 
