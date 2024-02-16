@@ -188,7 +188,11 @@ Table of Contents
               June 2022, <https://www.rfc-editor.org/rfc/rfc9114>.
 
    [QUIC-ON-STREAMS]
-              "*** BROKEN REFERENCE ***".
+              Oku, K. and L. Pardue, "QUIC on Streams", Work in
+              Progress, Internet-Draft, draft-kazuho-quic-quic-on-
+              streams-00, 16 February 2024,
+              <https://datatracker.ietf.org/doc/html/draft-kazuho-quic-
+              quic-on-streams-00>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
