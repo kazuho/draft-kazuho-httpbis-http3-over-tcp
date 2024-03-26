@@ -5,8 +5,10 @@
 httpbis                                                           K. Oku
 Internet-Draft                                                    Fastly
 Intended status: Standards Track                               L. Pardue
-Expires: 19 August 2024                                       Cloudflare
-                                                        16 February 2024
+Expires: 27 September 2024                                    Cloudflare
+                                                              J. Iyengar
+                                                                  Fastly
+                                                           26 March 2024
 
 
                            HTTP/3 on Streams
@@ -43,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 August 2024.
+   This Internet-Draft will expire on 27 September 2024.
 
 Copyright Notice
 
@@ -232,3 +234,8 @@ Authors' Addresses
    Lucas Pardue
    Cloudflare
    Email: lucas@lucaspardue.com
+
+
+   Jana Iyengar
+   Fastly
+   Email: jri.ietf@gmail.com
