@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-26T00:12:37.475518+00:00",
+  "timestamp": "2024-03-28T00:13:01.531738+00:00",
   "repo": "kazuho/draft-kazuho-httpbis-http3-on-streams",
   "labels": [
     {
@@ -58,7 +58,7 @@
       "url": "https://github.com/kazuho/draft-kazuho-httpbis-http3-on-streams/pull/1",
       "state": "MERGED",
       "author": "LPardue",
-      "authorAssociation": "CONTRIBUTOR",
+      "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
@@ -86,6 +86,48 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOKyF5GM5quWcl",
+      "title": "add Jana",
+      "url": "https://github.com/kazuho/draft-kazuho-httpbis-http3-on-streams/pull/2",
+      "state": "MERGED",
+      "author": "kazuho",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@janaiyengar PTAL",
+      "createdAt": "2024-03-26T00:33:30Z",
+      "updatedAt": "2024-03-28T00:08:52Z",
+      "baseRepository": "kazuho/draft-kazuho-httpbis-http3-on-streams",
+      "baseRefName": "main",
+      "baseRefOid": "cefa3b8e41f9d146ffb8323db023c3a0d61331cc",
+      "headRepository": "kazuho/draft-kazuho-httpbis-http3-on-streams",
+      "headRefName": "kazuho/add-jana",
+      "headRefOid": "cc28d561ceb484d631fff99e5bca8197f96775d9",
+      "closedAt": "2024-03-28T00:08:52Z",
+      "mergedAt": "2024-03-28T00:08:52Z",
+      "mergedBy": "kazuho",
+      "mergeCommit": {
+        "oid": "54c2b0ce33f02f8cd6376e041b4f2b1946a5faf8"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKyF5GM51HsKm",
+          "commit": {
+            "abbreviatedOid": "cc28d56"
+          },
+          "author": "janaiyengar",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-03-28T00:07:47Z",
+          "updatedAt": "2024-03-28T00:07:47Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
