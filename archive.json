@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-14T00:16:33.568554+00:00",
+  "timestamp": "2024-11-17T00:18:58.091646+00:00",
   "repo": "kazuho/draft-kazuho-httpbis-http3-on-streams",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 3,
+      "id": "I_kwDOKyF5GM6egyu7",
+      "title": "qpack",
+      "url": "https://github.com/kazuho/draft-kazuho-httpbis-http3-on-streams/issues/3",
+      "state": "OPEN",
+      "author": "LPardue",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "It was mentioned at the HTTP Workshop that using a reliable bytestream undervthe multiplexing changes some of the assumptions that QPACK over QUIC makes.\r\n\r\nOne suggestion was that setting the blocking limit to infinite may be beneficial.\r\n\r\nThis spec should probably have a QPACK considerations section",
+      "createdAt": "2024-11-14T16:41:08Z",
+      "updatedAt": "2024-11-14T16:41:09Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
